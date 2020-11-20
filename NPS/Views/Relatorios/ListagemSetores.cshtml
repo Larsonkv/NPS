@@ -1,0 +1,123 @@
+﻿@model PagedList.IPagedList<NPS.Models.Setor>
+@{
+    ViewBag.Title = "ListagemSetores";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html class="bg-light">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem Setor</title>
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/form-basic.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body onload="CalculaNPS()">
+    <div class="p-md-3 container bg-light">
+        <h1><img src="~/Content/Img/npsBlack.png" width=48 height=48 />  Relatório de Setores</h1>
+        <div class="col-md-12">
+            <table class="table">
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.SetorId)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+                    </tr>
+                }
+                <tr>
+                    <td>
+                        <b>@Model.Count registos de @Model.TotalItemCount</b>
+                    </td>
+                    <td>
+                        <b>Gerado em: @DateTime.Now.ToShortDateString()</b>
+                    </td>
+                    <td>
+                        <a href="/Relatorios/ListagemSetores?gerarPDF=true">
+                            <b>GERAR PDF</b>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    @{
+        if (Model.TotalItemCount != Model.Count)
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    Página @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) de
+                    @Model.PageCount
+
+                    @if (Model.HasPreviousPage)
+                    {
+                        @Html.ActionLink("<<", "ListaSetores", new
+                        {
+                            pagina = 1,
+                        sortOrder = ViewBag.CurrentSort,
+                            currentFilter = ViewBag.CurrentFilter
+                        })
+                        @Html.Raw(" ");
+                        @Html.ActionLink("< Anterior", "ListagemSetores", new
+                        {
+                            pagina =
+                        Model.PageNumber - 1,
+                            sortOrder = ViewBag.CurrentSort,
+                            currentFilter =
+                        ViewBag.CurrentFilter
+                        })
+                    }
+                    else
+                    {
+                        @:<<
+                        @Html.Raw(" ");
+                        @:< Anterior
+                    }
+
+                    @if (Model.HasNextPage)
+                    {
+                        @Html.ActionLink("Próxima >", "ListagemSetores", new
+                        {
+                            pagina =
+                        Model.PageNumber + 1,
+                            sortOrder = ViewBag.CurrentSort,
+                            currentFilter =
+                        ViewBag.CurrentFilter
+                        })
+                        @Html.Raw(" ");
+                        @Html.ActionLink(">>", "ListagemSetores", new
+                        {
+                            pagina =
+                        Model.PageCount,
+                            sortOrder = ViewBag.CurrentSort,
+                            currentFilter =
+                        ViewBag.CurrentFilter
+                        })
+                    }
+                    else
+                    {
+                        @:Próxima >
+                        @Html.Raw(" ")
+                        @:>>
+                    }
+                </div>
+            </div>
+        }
+    }
+
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script type="text/javascript">
+    </script>
+</body>
+</html>

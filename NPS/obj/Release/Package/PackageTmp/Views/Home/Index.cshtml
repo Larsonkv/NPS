@@ -1,0 +1,155 @@
+﻿@using NPS.Models;
+@{
+    ViewBag.Title = "Home";
+}
+@{
+    IEnumerable<Voto> votos = ViewData["Voto"] as IEnumerable<Voto>;
+    IEnumerable<Setor> setores = ViewData["Setor"] as IEnumerable<Setor>;
+}
+
+<br />
+<br />
+
+<div class="container">
+    <h2>Dashboard</h2>
+    <div class="card-group">
+        <div class="col-xl-3 col-md-6 mb-2">
+            <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="h5 mb-0 font-weight-bold text-gray-800 fa-2x" id="npsGeral"></div>
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">NPS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pending Requests Card Example -->
+        <div class="col-xl-3 col-md-6 mb-2">
+            <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="h5 mb-0 font-weight-bold text-gray-800 fa-2x" id="totalVotos"></div>
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Total de Votos</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-2">
+            <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="h5 mb-0 font-weight-bold text-gray-800 fa-2x" id="numSetores"></div>
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Total de Setores</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie Chart -->
+    <div class="col-xl-4 col-lg-5">
+        <div class="card shadow mb-4">
+            <!-- Card Header - Dropdown -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Gráfico de Votos</h6>
+            </div>
+            <!-- Card Body -->
+            <div class="card-body">
+                <div class="chart-pie pt-4 pb-22">
+                    <canvas id="myPieChart"></canvas>
+                </div>
+                <div class="mt-4 text-center small ">
+                    <span class="mr-2">
+                        <i class="fa fa-circle text-primary"></i> Detratores
+                    </span>
+                    <span class="mr-2">
+                        <i class="fa fa-circle text-success"></i> Promotores
+                    </span>
+                    <span class="mr-2">
+                        <i class="fa fa-circle text-info"></i> Neutros
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="Content/dash/vendor/jquery/jquery.min.js"></script>
+    <script src="Content/dash/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="Content/dash/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="Content/dash/js/sb-admin-2.min.js"></script>
+    <!-- Page level plugins -->
+    <script src="Content/dash/vendor/chart.js/Chart.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script>
+
+            var promotores = @votos.Where(v => v.Vl_voto > 8).Count();
+            var detratores = @votos.Where(v => v.Vl_voto <= 6).Count();
+            var totalVotos = @votos.Count();
+            var neutros = (totalVotos - detratores) - promotores;
+
+            $("#totalVotos").text(totalVotos);
+
+            var promotoresMenosDetratores = promotores - detratores;
+            var nps = promotoresMenosDetratores / totalVotos * 100;
+
+
+            var numSetores = @setores.Count();
+        $("#numSetores").text(numSetores);
+        $("#npsGeral").text(nps.toFixed(0));
+
+
+        // Set new default font family and font color to mimic Bootstrap's default styling
+        Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+        Chart.defaults.global.defaultFontColor = '#858796';
+        // Pie Chart Example
+        var ctx = document.getElementById("myPieChart");
+        var myPieChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ["Detratores", "Promotores", "Neutros"],
+                datasets: [{
+                    data: [detratores, promotores, neutros],
+                    backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+                    hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+                    hoverBorderColor: "rgba(234, 236, 244, 1)",
+                }],
+            },
+            options: {
+                maintainAspectRatio: false,
+                tooltips: {
+                    backgroundColor: "rgb(255,255,255)",
+                    bodyFontColor: "#858796",
+                    borderColor: '#dddfeb',
+                    borderWidth: 1,
+                    xPadding: 15,
+                    yPadding: 15,
+                    displayColors: false,
+                    caretPadding: 10,
+                },
+                legend: {
+                    display: false
+                },
+                cutoutPercentage: 65,
+            },
+        });
+    </script>
+
+}

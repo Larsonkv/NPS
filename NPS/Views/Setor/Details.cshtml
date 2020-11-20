@@ -1,0 +1,75 @@
+﻿@using NPS.Models
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Votos por Setor";
+    IEnumerable<Voto> votos = ViewData["Voto"] as IEnumerable<Voto>;
+}
+<br />
+<br />
+<div class="card-group ">
+    <div class="col-md-2 col-sm-1 mb-4" id="cartao" hidden>
+        <div class="card border-left-warning shadow h-100 py-2 bg-light">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="h5 mb-0 font-weight-bold text-gray-800 fa-2x" id="nps"></div>
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">NPS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-2 col-sm-1 mb-4" id="total1" hidden>
+        <div class="card border-left-warning shadow h-100 py-2 bg-light">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="h5 mb-0 font-weight-bold text-gray-800 fa-2x" id="total"></div>
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Total</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<h2>Votos @ViewBag.Message</h2>
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Setor</th>
+        <th>Nota</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.VotoId</td>
+            <td>@item.Setor.Nome</td>
+            <td>@item.Vl_voto</td>
+        </tr>
+    }
+</table>
+@Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-primary" })
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+            var promotores = @votos.Where(v => v.Vl_voto > 8).Count();
+            var detratores = @votos.Where(v => v.Vl_voto <= 6).Count();
+            var totalVotos = @votos.Count();
+            var neutros = (totalVotos - detratores) - promotores
+            var promotoresMenosDetratores = promotores - detratores;
+            var nps = promotoresMenosDetratores / totalVotos * 100;
+            if (totalVotos > 0) {
+                $("#cartao").removeAttr("hidden");
+                $("#total1").removeAttr("hidden");
+        }
+        $("#nps").text(nps.toFixed(0));
+            $("#total").text(totalVotos);
+
+    </script>
+}

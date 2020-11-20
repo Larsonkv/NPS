@@ -1,0 +1,27 @@
+﻿@model NPS.Models.Setor
+@{
+    ViewBag.Title = "Deletar Setor";
+}
+<br />
+<br />
+<h2>Deletar Setor</h2>
+
+<h3>Tem certeza de que deseja excluir?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Nome</dt>
+        <h3>@Html.DisplayFor(model => model.Nome)</h3>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Deletar" class="btn btn-danger" />
+            @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    }
+</div>
