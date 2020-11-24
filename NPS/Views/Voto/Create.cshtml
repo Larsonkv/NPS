@@ -32,7 +32,7 @@
         <div onmouseout="CRateSelected()" class=" form-row text-center justify-content-center">
             <p class="fa-2x">Em uma escala de 1 a 10, o quanto você indicaria o serviço a um amigo ou colega?</p>
 
-            <h5>0</h5><span id="span1" onmouseout="CRateOut(1)" onmouseover="CRateOver(1)" onclick="CRateClick(1)" class="fa fa-star-o fa-3x "></span>
+            <p style="font-size: 40px; font-weight:lighter">0 </p><span id="span1" onmouseout="CRateOut(1)" onmouseover="CRateOver(1)" onclick="CRateClick(1)" class="fa fa-star-o fa-3x "></span>
             <span id="span2" onmouseout="CRateOut(2)" onmouseover="CRateOver(2)" onclick="CRateClick(2)" class="fa fa-star-o fa-3x"></span>
             <span id="span3" onmouseout="CRateOut(3)" onmouseover="CRateOver(3)" onclick="CRateClick(3)" class="fa fa-star-o fa-3x"></span>
             <span id="span4" onmouseout="CRateOut(4)" onmouseover="CRateOver(4)" onclick="CRateClick(4)" class="fa fa-star-o fa-3x"></span>
@@ -41,7 +41,7 @@
             <span id="span7" onmouseout="CRateOut(7)" onmouseover="CRateOver(7)" onclick="CRateClick(7)" class="fa fa-star-o fa-3x"></span>
             <span id="span8" onmouseout="CRateOut(8)" onmouseover="CRateOver(8)" onclick="CRateClick(8)" class="fa fa-star-o fa-3x"></span>
             <span id="span9" onmouseout="CRateOut(9)" onmouseover="CRateOver(9)" onclick="CRateClick(9)" class="fa fa-star-o fa-3x"></span>
-            <span id="span10" onmouseout="CRateOut(10)" onmouseover="CRateOver(10)" onclick="CRateClick(10)" class="fa fa-star-o fa-3x"></span><h5>10</h5>
+            <span id="span10" onmouseout="CRateOut(10)" onmouseover="CRateOver(10)" onclick="CRateClick(10)" class="fa fa-star-o fa-3x"></span><p style="font-size: 40px; font-weight:lighter"> 10</p >
             <br />
             @Html.ValidationMessageFor(model => model.Vl_voto, "", new { @class = "text-danger" })
         </div>
