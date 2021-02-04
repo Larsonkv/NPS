@@ -13,6 +13,7 @@ namespace NPS.Controllers
         private dbModel db = new dbModel();
         public ActionResult ListagemVotos(int? pagina, Boolean? gerarPDF)
         {
+
             var listagemVotos = db.Votos.OrderBy(n => n.VotoId)
             .ToList<Voto>();
 
@@ -68,5 +69,6 @@ namespace NPS.Controllers
                 return pdf;
             }
         }
+
     }
 }

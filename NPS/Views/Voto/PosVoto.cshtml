@@ -2,24 +2,22 @@
 @{
     Layout = null;
 }
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>PM Gaspar</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600&amp;subset=latin-ext" rel="stylesheet">
-
     <!-- CSS -->
     <link href="~/Content/assets/css/main.css" rel="stylesheet" />
-
     <!-- JS -->
     <script src="~/Content/assets/js/vendor/modernizr-2.8.3.min.js"></script>
     <script src="~/Content/assets/js/vendor/jquery-1.12.0.min.js"></script>
 </head>
-<body onload="startResetTimer()">
+
+<body onload="startResetTimer(); Play() ">
+    <audio id="my_audio" src="~/Content/Aud/Teste.mp3" ></audio>
     <div class="site" id="page">
         <a class="skip-link sr-only" href="#main">Skip to content</a>
 
@@ -27,7 +25,7 @@
         <section class="hero-section hero-section--image clearfix clip">
             <div class="hero-section__wrap">
                 <div class="hero-section__option">
-                    <img src="~/Content/assets/images/index.jpg" alt="Hero section image"  width="1280" height="1024">
+                    <img src="~/Content/assets/images/index.jpg" alt="Hero section image" width="1280" height="1024">
                 </div>
                 <!-- .hero-section__option -->
 
@@ -57,6 +55,10 @@
     <script src="~/Content/assets/js/main.js"></script>
 
     <script>
+         function Play() {
+            document.getElementById("my_audio").play();
+        }
+
         function startResetTimer() {
             time = 30;
             interval = setInterval(function () {

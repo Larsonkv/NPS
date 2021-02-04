@@ -58,6 +58,8 @@ C:\Users\suportecpd\source\repos\NPS\NPS\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\suportecpd\source\repos\NPS\NPS\bin\MySql.Data.dll
 C:\Users\suportecpd\source\repos\NPS\NPS\bin\MySql.Data.Entity.EF6.dll
 C:\Users\suportecpd\source\repos\NPS\NPS\bin\Newtonsoft.Json.dll
+C:\Users\suportecpd\source\repos\NPS\NPS\bin\PagedList.dll
+C:\Users\suportecpd\source\repos\NPS\NPS\bin\Rotativa.dll
 C:\Users\suportecpd\source\repos\NPS\NPS\bin\System.Web.Helpers.dll
 C:\Users\suportecpd\source\repos\NPS\NPS\bin\System.Web.Mvc.dll
 C:\Users\suportecpd\source\repos\NPS\NPS\bin\System.Web.Optimization.dll
@@ -70,6 +72,7 @@ C:\Users\suportecpd\source\repos\NPS\NPS\bin\EntityFramework.xml
 C:\Users\suportecpd\source\repos\NPS\NPS\bin\EntityFramework.SqlServer.xml
 C:\Users\suportecpd\source\repos\NPS\NPS\bin\MySql.Data.xml
 C:\Users\suportecpd\source\repos\NPS\NPS\bin\MySql.Data.Entity.EF6.xml
+C:\Users\suportecpd\source\repos\NPS\NPS\bin\PagedList.xml
 C:\Users\suportecpd\source\repos\NPS\NPS\bin\System.Web.Helpers.xml
 C:\Users\suportecpd\source\repos\NPS\NPS\bin\System.Web.Mvc.xml
 C:\Users\suportecpd\source\repos\NPS\NPS\bin\System.Web.Optimization.xml
@@ -88,12 +91,9 @@ C:\Users\suportecpd\source\repos\NPS\NPS\bin\pt-br\System.Web.WebPages.resources
 C:\Users\suportecpd\source\repos\NPS\NPS\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
 C:\Users\suportecpd\source\repos\NPS\NPS\bin\pt-br\System.Web.WebPages.Razor.resources.dll
 C:\Users\suportecpd\source\repos\NPS\NPS\obj\Debug\NPS.csprojAssemblyReference.cache
+C:\Users\suportecpd\source\repos\NPS\NPS\obj\Debug\NPS.Migrations.Init.resources
+C:\Users\suportecpd\source\repos\NPS\NPS\obj\Debug\NPS.csproj.GenerateResource.cache
 C:\Users\suportecpd\source\repos\NPS\NPS\obj\Debug\NPS.csproj.CoreCompileInputs.cache
 C:\Users\suportecpd\source\repos\NPS\NPS\obj\Debug\NPS.csproj.CopyComplete
 C:\Users\suportecpd\source\repos\NPS\NPS\obj\Debug\NPS.dll
 C:\Users\suportecpd\source\repos\NPS\NPS\obj\Debug\NPS.pdb
-C:\Users\suportecpd\source\repos\NPS\NPS\obj\Debug\NPS.Migrations.Init.resources
-C:\Users\suportecpd\source\repos\NPS\NPS\obj\Debug\NPS.csproj.GenerateResource.cache
-C:\Users\suportecpd\source\repos\NPS\NPS\bin\PagedList.dll
-C:\Users\suportecpd\source\repos\NPS\NPS\bin\Rotativa.dll
-C:\Users\suportecpd\source\repos\NPS\NPS\bin\PagedList.xml

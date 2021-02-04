@@ -14,7 +14,7 @@ namespace NPS.Controllers
         public ActionResult Index()
         {
             var votos = db.Votos.Include(v => v.Setor);
-            return View(votos.ToList());
+            return View(votos.ToList().OrderByDescending(v => v.VotoId));
         }
 
         // GET: Voto/Create

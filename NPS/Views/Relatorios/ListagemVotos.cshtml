@@ -18,7 +18,7 @@
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body onload="CalculaNPS()">
+<body>
     <div class="p-md-3 container bg-light">
         <h1><img src="~/Content/Img/npsBlack.png" width=48 height=48 />  Relatório de Votos</h1>
         <div class="col-md-12">
@@ -42,9 +42,6 @@
                 }
                 <tr>
                     <td>
-                        <label><b id="lblNPS"></b></label>
-                    </td>
-                    <td>
                         <b>@Model.Count registos de @Model.TotalItemCount</b>
                     </td>
                     <td>
@@ -52,7 +49,7 @@
                     </td>
                     <td>
                         <a href="/Relatorios/ListagemVotos?gerarPDF=true">
-                            <b>GERAR PDF</b>
+                            <b>PDF</b>
                         </a>
                     </td>
                 </tr>
@@ -126,10 +123,10 @@
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    <script type="text/javascript">
+<script type="text/javascript">
 
-        function CalculaNPS() {
-            var promotores = @Model.Where(v => v.Vl_voto > 8).Count();
+    function CalculaNPS() {
+            @*var promotores = @Model.Where(v => v.Vl_voto > 8).Count();
             var detratores = @Model.Where(v => v.Vl_voto <= 6).Count();
             var totalVotos = @Model.Count();
             var neutros = (totalVotos - detratores) - promotores;
@@ -137,8 +134,8 @@
             var promotoresMenosDetratores = promotores - detratores;
             var nps = promotoresMenosDetratores / totalVotos * 100;
 
-            $("#lblNPS").text("NPS: "+nps.toFixed(0));
+            $("#lblNPS").text("NPS: "+nps.toFixed(0));*@
         }
-    </script>
+</script>
 </body>
 </html>
