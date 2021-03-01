@@ -1,7 +1,9 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
+using NPS.Excel;
 using NPS.Models;
 
 namespace NPS.Controllers
@@ -10,6 +12,21 @@ namespace NPS.Controllers
     {
         private dbModel db = new dbModel();
 
+        public void Excel()
+        {
+            VotoExcel excel = new VotoExcel();
+            Response.ClearContent();
+            Response.BinaryWrite(excel.GenerateExcel(getVotos()));
+            Response.AddHeader("content-disposition", "attachment; filename=Votos.xlsx");
+            Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+            Response.Flush();
+            Response.End();
+        }
+
+        public List<Voto> getVotos() {
+            List<Voto> votos = db.Votos.ToList();
+            return votos;
+        }
         // GET: Voto
         public ActionResult Index()
         {
@@ -26,7 +43,7 @@ namespace NPS.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "VotoId,Vl_voto,Nr_telefone,Justificativa_voto,SetorId")] Voto voto)
+        public ActionResult Create([Bind(Include = "VotoId,Vl_voto,Nr_telefone,Justificativa_voto,SetorId,Dt_voto")] Voto voto)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +74,7 @@ namespace NPS.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "VotoId,Vl_voto,Nr_telefone,Justificativa_voto,SetorId")] Voto voto)
+        public ActionResult Edit([Bind(Include = "VotoId,Vl_voto,Nr_telefone,Justificativa_voto,SetorId, Dt_voto")] Voto voto)
         {
             if (ModelState.IsValid)
             {

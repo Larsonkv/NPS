@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace NPS.Models
 {
@@ -11,5 +12,8 @@ namespace NPS.Models
         public string Justificativa_voto { get; set; }
         public int SetorId { get; set; }
         public virtual Setor Setor { get; set; }
+
+        [DataType(DataType.Date)]
+        public DateTime Dt_voto { get; set; }
     }
 }

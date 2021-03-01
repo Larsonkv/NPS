@@ -9,10 +9,11 @@
 
 <p>
     @Html.ActionLink("Novo", "Create", null, new { @class = "btn btn-success" })
+    @Html.ActionLink("Gerar Excel", "Excel", null, new { @class = "font-weight-bold", style= "margin-left: 85%" })
 </p>
 <table class="table table-hover">
     <tr>
-        <th>ID</th>
+        @*<th>ID</th>*@
         <th>Nome</th>
         <th></th>
     </tr>
@@ -20,9 +21,9 @@
     @foreach (var item in Model)
     {
         <tr>
-            <td>@item.SetorId</td>
+            @*<td>@item.SetorId</td>*@
             <td>@item.Nome</td>
-            <td>
+            <td class="float-right">
                 @Html.ActionLink("NPS", "Details", new { id = item.SetorId }, new { @class = "btn btn-primary" })
                 @Html.ActionLink("Editar", "Edit", new { id = item.SetorId }, new { @class = "btn btn-warning" })
                 @Html.ActionLink("Deletar", "Delete", new { id = item.SetorId }, new { @class = "btn btn-danger" })

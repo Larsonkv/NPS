@@ -3,6 +3,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
+using NPS.Excel;
 using NPS.Models;
 
 namespace NPS.Controllers
@@ -10,6 +11,23 @@ namespace NPS.Controllers
     public class SetorController : Controller
     {
         private dbModel db = new dbModel();
+
+        public void Excel()
+        {
+            SetorExcel excel = new SetorExcel();
+            Response.ClearContent();
+            Response.BinaryWrite(excel.GenerateExcel(getSetores()));
+            Response.AddHeader("content-disposition", "attachment; filename=Setores.xlsx");
+            Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+            Response.Flush();
+            Response.End();
+        }
+
+        public List<Setor> getSetores()
+        {
+            List<Setor> setores = db.Setores.ToList();
+            return setores;
+        }
 
         // GET: Setor
         public ActionResult Index()

@@ -31,3 +31,8 @@ float: right;
 .rate-container > i:HOVER ~ i {
 color: gold;
 }
+
+
+.hide, .hidden {
+    display: none;
+}
