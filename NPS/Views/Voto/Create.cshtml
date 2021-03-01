@@ -1,4 +1,6 @@
-﻿@model NPS.Models.Voto
+﻿@*Author: Larson Kremer Vicente*@
+
+@model NPS.Models.Voto
 @{
     Layout = null;
 }
@@ -28,14 +30,14 @@
         @Html.AntiForgeryToken()
 
         <div class="form-row">
-            @Html.ValidationSummary(true, "", new { @class = "text-danger", @value = ""})
+            @Html.ValidationSummary(true, "", new { @class = "text-danger", @value = "" })
         </div>
 
         <div class=" form-row justify-content-center text-center">
 
             <div>
                 <div>
-                    @Html.TextBoxFor(model => model.Dt_voto, new { type = "datetime-local", style= " display: none;" })
+                    @Html.TextBoxFor(model => model.Dt_voto, new { type = "datetime-local", style = " display: none;" })
                 </div>
             </div>
             <div>

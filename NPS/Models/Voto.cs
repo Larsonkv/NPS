@@ -1,4 +1,6 @@
-﻿using System;
+﻿//Author: Larson Kremer Vicente
+
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace NPS.Models

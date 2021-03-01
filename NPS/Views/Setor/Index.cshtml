@@ -1,4 +1,6 @@
-﻿@model IEnumerable<NPS.Models.Setor>
+﻿@*Author: Larson Kremer Vicente*@
+
+@model IEnumerable<NPS.Models.Setor>
 
 @{
     ViewBag.Title = "Lista de Setores";
@@ -9,7 +11,7 @@
 
 <p>
     @Html.ActionLink("Novo", "Create", null, new { @class = "btn btn-success" })
-    @Html.ActionLink("Gerar Excel", "Excel", null, new { @class = "font-weight-bold", style= "margin-left: 85%" })
+    @Html.ActionLink("Gerar Excel", "Excel", null, new { @class = "font-weight-bold", style = "margin-left: 85%" })
 </p>
 <table class="table table-hover">
     <tr>

@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿//Author: Larson Kremer Vicente
+using System.Web;
 using System.Web.Optimization;
 
 namespace NPS

@@ -1,4 +1,6 @@
-﻿using NPS.Models;
+﻿//Author: Larson Kremer Vicente
+
+using NPS.Models;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using System.Collections.Generic;

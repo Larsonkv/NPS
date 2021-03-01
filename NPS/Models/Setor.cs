@@ -1,4 +1,6 @@
-﻿using System;
+﻿//Author: Larson Kremer Vicente
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 

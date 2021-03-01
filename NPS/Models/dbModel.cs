@@ -1,4 +1,6 @@
-﻿using System.Data.Entity;
+﻿//Author: Larson Kremer Vicente
+
+using System.Data.Entity;
 using MySql.Data.Entity;
 
 namespace NPS.Models
