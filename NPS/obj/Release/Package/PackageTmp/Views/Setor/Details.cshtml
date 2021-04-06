@@ -1,4 +1,6 @@
-﻿@using NPS.Models
+﻿@*Author: Larson Kremer Vicente*@
+
+@using NPS.Models
 @{
     ViewBag.Title = "Votos por Setor";
     IEnumerable<Voto> votos = ViewData["Voto"] as IEnumerable<Voto>;
@@ -60,7 +62,7 @@
 @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-primary" })
 
 @section Scripts {
-  
+
     <script>
             var promotores = @votos.Where(v => v.Vl_voto > 8).Count();
             var detratores = @votos.Where(v => v.Vl_voto <= 6).Count();

@@ -1,4 +1,6 @@
-﻿@model IEnumerable<NPS.Models.Setor>
+﻿@*Author: Larson Kremer Vicente*@
+
+@model IEnumerable<NPS.Models.Setor>
 
 @{
     ViewBag.Title = "Lista de Setores";
@@ -9,7 +11,7 @@
 
 <p>
     @Html.ActionLink("Novo", "Create", null, new { @class = "btn btn-success" })
-    @Html.ActionLink("Gerar Excel", "Excel", null, new { @class = "font-weight-bold", style= "margin-left: 85%" })
+    @Html.ActionLink("Gerar Excel", "Excel", null, new { @class = "font-weight-bold", style = "margin-left: 85%" })
 </p>
 <table class="table table-hover">
     <tr>
@@ -25,8 +27,8 @@
             <td>@item.Nome</td>
             <td class="float-right">
                 @Html.ActionLink("NPS", "Details", new { id = item.SetorId }, new { @class = "btn btn-primary" })
-                @Html.ActionLink("Editar", "Edit", new { id = item.SetorId }, new { @class = "btn btn-warning" })
-                @Html.ActionLink("Deletar", "Delete", new { id = item.SetorId }, new { @class = "btn btn-danger" })
+                @*@Html.ActionLink("Editar", "Edit", new { id = item.SetorId }, new { @class = "btn btn-warning" })
+                @Html.ActionLink("Deletar", "Delete", new { id = item.SetorId }, new { @class = "btn btn-danger" })*@
             </td>
         </tr>
     }

@@ -1,4 +1,6 @@
-﻿@model IEnumerable<NPS.Models.Voto>
+﻿@*Author: Larson Kremer Vicente*@
+
+@model IEnumerable<NPS.Models.Voto>
 
 @{
     ViewBag.Title = "Lista de Votos";
@@ -25,17 +27,17 @@
 
     @foreach (var item in Model)
     {
-<tr>
-    @*<td>@item.VotoId</td>*@
-    <td>@item.Dt_voto</td>
-    <td>@item.Setor.Nome</td>
-    <td>@item.Vl_voto</td>
-    <td>@item.Nr_telefone</td>
-    <td>@item.Justificativa_voto</td>
-    <td>
-        @*@Html.ActionLink("Editar", "Edit", new { id = item.VotoId }, new { @class = "btn btn-warning" })
-            @Html.ActionLink("Deletar", "Delete", new { id = item.VotoId }, new { @class = "btn btn-danger" })*@
-    </td>
-</tr>
+        <tr>
+            @*<td>@item.VotoId</td>*@
+            <td>@item.Dt_voto</td>
+            <td>@item.Setor.Nome</td>
+            <td>@item.Vl_voto</td>
+            <td>@item.Nr_telefone</td>
+            <td>@item.Justificativa_voto</td>
+            <td>
+                @*@Html.ActionLink("Editar", "Edit", new { id = item.VotoId }, new { @class = "btn btn-warning" })
+                @Html.ActionLink("Deletar", "Delete", new { id = item.VotoId }, new { @class = "btn btn-danger" })*@
+            </td>
+        </tr>
     }
 </table>
