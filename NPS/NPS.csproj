@@ -165,6 +165,10 @@
     <Compile Include="Migrations\202102231723181_init.designer.cs">
       <DependentUpon>202102231723181_init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108131435167_Teste.cs" />
+    <Compile Include="Migrations\202108131435167_Teste.designer.cs">
+      <DependentUpon>202108131435167_Teste.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\dbModel.cs" />
     <Compile Include="Models\Setor.cs" />
@@ -2246,6 +2250,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202102231723181_init.resx">
       <DependentUpon>202102231723181_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108131435167_Teste.resx">
+      <DependentUpon>202108131435167_Teste.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -137,7 +137,6 @@ C:\Users\suportecpd\Documents\GitHub\NPS\NPS\bin\pt-br\System.Web.Razor.resource
 C:\Users\suportecpd\Documents\GitHub\NPS\NPS\bin\pt-br\System.Web.WebPages.resources.dll
 C:\Users\suportecpd\Documents\GitHub\NPS\NPS\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
 C:\Users\suportecpd\Documents\GitHub\NPS\NPS\bin\pt-br\System.Web.WebPages.Razor.resources.dll
-C:\Users\suportecpd\Documents\GitHub\NPS\NPS\obj\Debug\NPS.csprojAssemblyReference.cache
 C:\Users\suportecpd\Documents\GitHub\NPS\NPS\obj\Debug\NPS.csproj.CoreCompileInputs.cache
 C:\Users\suportecpd\Documents\GitHub\NPS\NPS\obj\Debug\NPS.csproj.CopyComplete
 C:\Users\suportecpd\Documents\GitHub\NPS\NPS\obj\Debug\NPS.dll
@@ -198,3 +197,5 @@ C:\Users\suportecpd\Documents\GitHub\NPS\NPS\bin\EPPlus.xml
 C:\Users\suportecpd\Documents\GitHub\NPS\NPS\bin\Microsoft.IO.RecyclableMemoryStream.xml
 C:\Users\suportecpd\Documents\GitHub\NPS\NPS\obj\Debug\NPS.Migrations.init.resources
 C:\Users\suportecpd\Documents\GitHub\NPS\NPS\obj\Debug\NPS.csproj.GenerateResource.cache
+C:\Users\suportecpd\Documents\GitHub\NPS\NPS\obj\Debug\NPS.csproj.AssemblyReference.cache
+C:\Users\suportecpd\Documents\GitHub\NPS\NPS\obj\Debug\NPS.Migrations.Teste.resources

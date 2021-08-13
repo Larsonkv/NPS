@@ -7,6 +7,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAW+MkcslPU0ab6TBbp4yCqwAAAAACAAAAAAADZgAAwAAAABAAAADb+tCXLJoFiNGUijk9lMGyAAAAAASAAACgAAAAEAAAAIS/AOtNbGnFDd+fbXs1UjAgAAAAvE3K9l4Yk9yDgRQkvQUiuU1s1zFE1dQdnBjfXbjhIxYUAAAA2dJImQ0SyZcDDq+JoWbhhSDe3lk=</EncryptedPassword>
     <_PublishTargetUrl>Q:\</_PublishTargetUrl>
+    <History>True|2021-08-13T14:40:07.0491073Z;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="App_Browsers/qt.browser">

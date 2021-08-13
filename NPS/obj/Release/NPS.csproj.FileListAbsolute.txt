@@ -191,10 +191,11 @@ C:\Users\suportecpd\Documents\GitHub\NPS\NPS\bin\pt-br\System.Web.Razor.resource
 C:\Users\suportecpd\Documents\GitHub\NPS\NPS\bin\pt-br\System.Web.WebPages.resources.dll
 C:\Users\suportecpd\Documents\GitHub\NPS\NPS\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
 C:\Users\suportecpd\Documents\GitHub\NPS\NPS\bin\pt-br\System.Web.WebPages.Razor.resources.dll
-C:\Users\suportecpd\Documents\GitHub\NPS\NPS\obj\Release\NPS.csprojAssemblyReference.cache
 C:\Users\suportecpd\Documents\GitHub\NPS\NPS\obj\Release\NPS.Migrations.init.resources
 C:\Users\suportecpd\Documents\GitHub\NPS\NPS\obj\Release\NPS.csproj.GenerateResource.cache
 C:\Users\suportecpd\Documents\GitHub\NPS\NPS\obj\Release\NPS.csproj.CoreCompileInputs.cache
 C:\Users\suportecpd\Documents\GitHub\NPS\NPS\obj\Release\NPS.csproj.CopyComplete
 C:\Users\suportecpd\Documents\GitHub\NPS\NPS\obj\Release\NPS.dll
 C:\Users\suportecpd\Documents\GitHub\NPS\NPS\obj\Release\NPS.pdb
+C:\Users\suportecpd\Documents\GitHub\NPS\NPS\obj\Release\NPS.csproj.AssemblyReference.cache
+C:\Users\suportecpd\Documents\GitHub\NPS\NPS\obj\Release\NPS.Migrations.Teste.resources
